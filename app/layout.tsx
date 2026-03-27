@@ -1,10 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Poppins } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"]
+})
 
 export const metadata: Metadata = {
   title: "Nav Appaiya | Portfolio",
@@ -19,8 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+      <body className={poppins.className}>
+        <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
       </body>
     </html>
   )
